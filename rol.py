@@ -14,8 +14,7 @@ from luma.core.virtual import viewport, snapshot
 from PIL import ImageFont
 from demo_opts import get_device                        # easy device selection cmd line
 import csv                                              # csv export functions
-import configparser                                     # config importer
-configfile = 'ROL-CONF.ini'                             # location of config file
+import config                                           # import config
 
 # Inputs
 from gpiozero import Button, RotaryEncoder, MotionSensor
@@ -39,7 +38,7 @@ control_output = [0]        # control unit outputs
 chartlength = 108           # chart display length
 offtimer = [0]              # display off timer       
 timeout = 120               # time out in seconds
-csvfile = ""                # csv file location
+csvfile = config.csvpath2   # csv file location
 writeout_timer = [0]        # write to csv when = csvscale
 csvscale = [600]            # write to csv in seconds
 datacollecttimer = [1]      # datacollect in seconds
@@ -377,11 +376,7 @@ async def main():
         # print(f'h wert {h} button wert {btn}')      
             
 if __name__ == '__main__':
-    # get config
-    config = configparser.ConfigParser()    
-    config.read(configfile)
-    csvfile = config.get('Oled-config', 'csvpath2')
-    
+
     try:
         device = get_device()                   # device selector default to ssd1306
         virtual = viewport(device, width=device.width * 2, height=device.height)

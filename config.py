@@ -1,0 +1,1 @@
+csvpath2 = "/home/ubuntu/scripts/OLED/HMON/RPI-OLED-LOGGER/csvtest.csv"

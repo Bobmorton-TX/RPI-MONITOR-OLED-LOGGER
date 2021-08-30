@@ -21,8 +21,22 @@ second OLED display on another I2c port
 
 **REQUIRED LIBARIES**
 
-luma.core
+python3
+
+luma.core (https://github.com/rm-hull/luma.core)
 
 psutil
 
 gpiozero
+
+**How to use**
+install libaries
+connect display, PIR, Encoder to GPIO (use ports specified or change in code accordingly)
+run script
+
+- run as system service (this currently gives an error and does not work)
+
+
+
+
+

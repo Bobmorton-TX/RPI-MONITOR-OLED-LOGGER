@@ -5,7 +5,7 @@ Conflicts=getty@tty1.service
 
 [Service]
 Type=simple
-ExecStart=/usr/bin/python3 /home/ubuntu/scripts/OLED/HMON/hpara-v14.py
+ExecStart=/usr/bin/python3 /path/to/script
 StandardInput=tty-force
 
 [Install]
